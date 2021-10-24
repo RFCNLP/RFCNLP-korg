@@ -15,7 +15,6 @@
 from korg.CLI          import *
 from korg.Characterize import *
 from korg.Construct    import *
-from korg.Equivalent   import determineAttackStrategy
 from korg.printUtils   import makeBlue
 from glob              import glob
 
