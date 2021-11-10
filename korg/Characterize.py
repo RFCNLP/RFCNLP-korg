@@ -110,6 +110,7 @@ def removeRedundant(attackPath):
         attacker_hash = hash(attacker_body)
         
         if (attacker_hash in attacker_hashes):
+            print("Removing redundant attacker " + attacker)
             os.remove(attacker)
         
         else:
