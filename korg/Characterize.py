@@ -262,6 +262,15 @@ def parseTrail(trail_body, cycle_indicator=None):
                 ret[i].append(chan + " " + evt + " " + msg)
         
         elif cycle_indicator in line:
+            
+            print("(For debug purposes - we find cycle_indicator={"
+                + cycle_indicator
+                + "} in the line {"
+                + line
+                + "}.  If this looks wrong, Spin might have been updated "
+                + "with a breaking change, in which case the code in parseTrail(...)"
+                + " will need tobe updated.")
+            
             i = 1
     
     return ret

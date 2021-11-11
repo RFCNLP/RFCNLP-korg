@@ -138,7 +138,7 @@ def body(model, phi, Q, IO, max_attacks=1, \
     makeAllTrails(daisy_models_name, max_attacks) 
     # second arg is max# attacks to make
 
-    cycle_indicator = None if with_recovery == False else ( label + " = 1;" )
+    cycle_indicator = None if with_recovery == False else ( label + " = 1" )
 
     cmds                = trailParseCMDs(daisy_models_name)
     attacks, provenance = parseAllTrails(cmds, 

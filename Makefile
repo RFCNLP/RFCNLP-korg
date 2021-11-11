@@ -107,6 +107,17 @@ experiment3:
 			--name=experiment3                \
 			--characterize=False
 
+experiment4:
+	time python3 korg/Korg.py                 \
+			--model=demo/TCP/TCP.pml          \
+			--phi=demo/TCP/phi4.pml 		  \
+			--Q=demo/TCP/network.pml          \
+			--IO=demo/TCP/IO.txt              \
+			--max_attacks=100                 \
+			--with_recovery=True              \
+			--name=experiment4                \
+			--characterize=False
+
 # Runs the semaphore demo
 semaphoreDemo:
 	python3 korg/Korg.py \
