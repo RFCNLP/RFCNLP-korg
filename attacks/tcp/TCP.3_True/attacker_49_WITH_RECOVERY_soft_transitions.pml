@@ -407,19 +407,49 @@ active proctype attacker() {
 	:: AtoN ? SYN;
 	fi unless timeout;
 	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! SYN;
+	fi unless timeout;
+	if
+	:: NtoA ! FIN;
+	fi unless timeout;
+	if
+	:: AtoN ? ACK;
+	fi unless timeout;
+	if
+	:: AtoN ? ACK;
+	fi unless timeout;
+	if
+	:: AtoN ? FIN;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: NtoB ! FIN;
+	fi unless timeout;
+	if
+	:: AtoN ? SYN;
+	fi unless timeout;
+	if
+	:: BtoN ? ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
 	:: NtoA ! SYN;
 	fi unless timeout;
 	if
 	:: AtoN ? ACK;
 	fi unless timeout;
 	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
 	:: NtoB ! SYN;
+	fi unless timeout;
+	if
+	:: AtoN ? FIN;
 	fi unless timeout;
 	if
 	:: BtoN ? SYN;
@@ -428,24 +458,6 @@ active proctype attacker() {
 	:: BtoN ? ACK;
 	fi unless timeout;
 	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
 	:: NtoA ! ACK;
 	fi unless timeout;
 	if
@@ -461,106 +473,22 @@ active proctype attacker() {
 	:: AtoN ? SYN;
 	fi unless timeout;
 	if
+	:: AtoN ? ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
 	:: NtoA ! ACK;
 	fi unless timeout;
 	if
 	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
 	fi unless timeout;
 	if
 	:: NtoB ! ACK;
 	fi unless timeout;
 	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
 	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
 	fi unless timeout;
 	if
 	:: NtoB ! ACK;
@@ -620,268 +548,10 @@ active proctype attacker() {
 	:: AtoN ? FIN;
 	fi unless timeout;
 	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
 	:: NtoB ! SYN;
 	fi unless timeout;
 	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
 	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
 	fi unless timeout;
 	if
 	:: BtoN ? SYN;
@@ -890,64 +560,22 @@ active proctype attacker() {
 	:: NtoA ! ACK;
 	fi unless timeout;
 	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
+	:: AtoN ? SYN;
 	fi unless timeout;
 	if
 	:: BtoN ? ACK;
 	fi unless timeout;
 	if
-	:: AtoN ? SYN;
+	:: NtoA ! ACK;
 	fi unless timeout;
 	if
 	:: NtoA ! SYN;
 	fi unless timeout;
 	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
 	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
 	fi unless timeout;
 	if
 	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
 	fi unless timeout;
 	if
 	:: AtoN ? FIN;
@@ -959,28 +587,7 @@ active proctype attacker() {
 	:: NtoB ! FIN;
 	fi unless timeout;
 	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
+	:: BtoN ? FIN;
 	fi unless timeout;
 	if
 	:: BtoN ? ACK;
@@ -989,22 +596,91 @@ active proctype attacker() {
 	:: NtoA ! FIN;
 	fi unless timeout;
 	if
-	:: NtoB ! ACK;
+	:: AtoN ? ACK;
 	fi unless timeout;
 	if
-	:: BtoN ? FIN;
+	:: NtoA ! SYN;
 	fi unless timeout;
 	if
-	:: NtoB ! ACK;
+	:: AtoN ? SYN;
 	fi unless timeout;
 	if
-	:: NtoB ! FIN;
+	:: AtoN ? ACK;
 	fi unless timeout;
 	if
-	:: NtoB ! SYN;
+	:: NtoA ! ACK;
 	fi unless timeout;
 	if
 	:: AtoN ? FIN;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: NtoB ! ACK;
+	fi unless timeout;
+	if
+	:: BtoN ? SYN;
+	fi unless timeout;
+	if
+	:: NtoA ! FIN;
+	fi unless timeout;
+	if
+	:: AtoN ? ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! SYN;
+	fi unless timeout;
+	if
+	:: AtoN ? SYN;
+	fi unless timeout;
+	if
+	:: AtoN ? ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: AtoN ? FIN;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: NtoB ! ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! FIN;
+	fi unless timeout;
+	if
+	:: AtoN ? ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! SYN;
+	fi unless timeout;
+	if
+	:: AtoN ? SYN;
+	fi unless timeout;
+	if
+	:: AtoN ? ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: AtoN ? FIN;
+	fi unless timeout;
+	if
+	:: NtoA ! FIN;
+	fi unless timeout;
+	if
+	:: AtoN ? ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: NtoB ! SYN;
 	fi unless timeout;
 	if
 	:: BtoN ? ACK;
@@ -1013,19 +689,79 @@ active proctype attacker() {
 	:: NtoA ! SYN;
 	fi unless timeout;
 	if
+	:: AtoN ? SYN;
+	fi unless timeout;
+	if
+	:: AtoN ? ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: NtoB ! FIN;
+	fi unless timeout;
+	if
+	:: AtoN ? FIN;
+	fi unless timeout;
+	if
+	:: BtoN ? FIN;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: NtoB ! ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! FIN;
+	fi unless timeout;
+	if
 	:: AtoN ? ACK;
 	fi unless timeout;
 	if
 	:: AtoN ? SYN;
 	fi unless timeout;
 	if
+	:: BtoN ? ACK;
+	fi unless timeout;
+	if
 	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! SYN;
+	fi unless timeout;
+	if
+	:: NtoA ! FIN;
 	fi unless timeout;
 	if
 	:: AtoN ? ACK;
 	fi unless timeout;
 	if
+	:: AtoN ? ACK;
+	fi unless timeout;
+	if
+	:: AtoN ? FIN;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! SYN;
+	fi unless timeout;
+	if
+	:: NtoB ! SYN;
+	fi unless timeout;
+	if
+	:: AtoN ? SYN;
+	fi unless timeout;
+	if
 	:: BtoN ? SYN;
+	fi unless timeout;
+	if
+	:: AtoN ? ACK;
 	fi unless timeout;
 	if
 	:: NtoA ! ACK;
@@ -1071,1353 +807,6 @@ active proctype attacker() {
 	fi unless timeout;
 	if
 	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! FIN;
-	fi unless timeout;
-	if
-	:: BtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
 	fi unless timeout;
 // recovery to N
 // N begins here ... 

@@ -5,10 +5,10 @@ active proctype attacker() {
 	BtoN ? SYN;
 	BtoN ? ACK;
 	NtoB ! ACK;
-	BtoN ? FIN;
-	NtoB ! ACK;
 	NtoB ! FIN;
 	BtoN ? ACK;
+	NtoB ! ACK;
+	BtoN ? FIN;
 // recovery to N
 // N begins here ... 
 

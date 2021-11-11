@@ -29,25 +29,10 @@ active proctype attacker() {
 	:: AtoN ? ACK;
 	fi unless timeout;
 	if
+	:: NtoB ! ACK;
+	fi unless timeout;
+	if
 	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
 	fi unless timeout;
 	if
 	:: NtoB ! SYN;
@@ -59,196 +44,58 @@ active proctype attacker() {
 	:: BtoN ? ACK;
 	fi unless timeout;
 	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
+	:: NtoA ! ACK;
 	fi unless timeout;
 	if
 	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
 	fi unless timeout;
 	if
 	:: NtoB ! ACK;
 	fi unless timeout;
 	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
 	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
 	fi unless timeout;
 	if
 	:: NtoB ! FIN;
 	fi unless timeout;
 	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
+	:: BtoN ? FIN;
 	fi unless timeout;
 	if
 	:: NtoA ! FIN;
 	fi unless timeout;
 	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
 	:: BtoN ? ACK;
+	fi unless timeout;
+	if
+	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: AtoN ? ACK;
+	fi unless timeout;
+	if
+	:: NtoB ! ACK;
 	fi unless timeout;
 	if
 	:: BtoN ? SYN;
 	fi unless timeout;
 	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
 	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
 	fi unless timeout;
 	if
 	:: AtoN ? SYN;
 	fi unless timeout;
 	if
-	:: NtoA ! ACK;
+	:: NtoB ! SYN;
 	fi unless timeout;
 	if
 	:: BtoN ? ACK;
 	fi unless timeout;
 	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
 	:: NtoA ! ACK;
+	fi unless timeout;
+	if
+	:: AtoN ? ACK;
 	fi unless timeout;
 	if
 	:: NtoB ! ACK;
@@ -257,55 +104,10 @@ active proctype attacker() {
 	:: BtoN ? FIN;
 	fi unless timeout;
 	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
 	:: NtoA ! FIN;
 	fi unless timeout;
 	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
 	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
 	fi unless timeout;
 	if
 	:: NtoB ! FIN;
@@ -314,127 +116,34 @@ active proctype attacker() {
 	:: BtoN ? ACK;
 	fi unless timeout;
 	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
+	:: NtoA ! ACK;
 	fi unless timeout;
 	if
 	:: AtoN ? ACK;
 	fi unless timeout;
 	if
-	:: NtoA ! ACK;
+	:: NtoB ! ACK;
 	fi unless timeout;
 	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
+	:: AtoN ? SYN;
 	fi unless timeout;
 	if
 	:: NtoB ! SYN;
 	fi unless timeout;
 	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
 	:: BtoN ? SYN;
+	fi unless timeout;
+	if
+	:: NtoA ! SYN;
+	fi unless timeout;
+	if
+	:: AtoN ? ACK;
 	fi unless timeout;
 	if
 	:: BtoN ? ACK;
 	fi unless timeout;
 	if
 	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: BtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoB ! ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
 	fi unless timeout;
 // recovery to N
 // N begins here ... 

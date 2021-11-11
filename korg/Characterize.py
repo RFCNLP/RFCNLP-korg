@@ -100,6 +100,8 @@ def removeRedundant(attackPath):
         attackPath += "/"
     
     for attacker in glob(attackPath + "*.pml"):
+
+        print("Considering attacker " + attacker + " for possible removal")
         attacker_body = ""
         l = 0
         with open(attacker, "r") as fr:
@@ -115,6 +117,7 @@ def removeRedundant(attackPath):
         
         else:
             attacker_hashes.add(attacker_hash)
+            print("Did not remove.")
 
 '''
 Given the path to a model containing one or more properties,

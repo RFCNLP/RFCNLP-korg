@@ -5,7 +5,7 @@ active proctype attacker() {
 	:: NtoB ! SYN;
 	fi unless timeout;
 	if
-	:: AtoN ? SYN;
+	:: NtoB ! ACK;
 	fi unless timeout;
 	if
 	:: AtoN ? SYN;

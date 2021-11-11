@@ -145,6 +145,8 @@ def body(model, phi, Q, IO, max_attacks=1, \
                                          with_recovery=with_recovery, 
                                          debug=False, 
                                          cycle_indicator=cycle_indicator)
+
+    print("Writing attacks ...")
     
     # Write these attacks to models
     writeAttacks(attacks, provenance, net, with_recovery, attacker_name)
@@ -159,6 +161,8 @@ def body(model, phi, Q, IO, max_attacks=1, \
     else:
         cleanUp()
         ret = 0 # assume it worked if not asked to prove it ...
+
+    print("Removing redundant attack files ...")
 
     attackPath = "out/" + name + "_" + str(with_recovery)
     removeRedundant(attackPath)
@@ -180,10 +184,12 @@ def body(model, phi, Q, IO, max_attacks=1, \
 
     """
 
+    """
     testRemaining(attackPath, model, Q, otherProps)
     for comparison in comparisons:
         print("\t testing if attacks transfer to " + comparison)
         testRemaining(attackPath, comparison, Q, otherProps, comparing=True)
+    """
 
     return ret
 

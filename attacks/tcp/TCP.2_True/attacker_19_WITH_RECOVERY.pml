@@ -1,9 +1,8 @@
 /* spin -t19 -s -r -p -g TCP.2_daisy_check.pml */
 active proctype attacker() {
 	
-	NtoB ! SYN;
 	NtoB ! ACK;
-	AtoN ? SYN;
+	NtoB ! SYN;
 	AtoN ? SYN;
 // recovery to N
 // N begins here ... 

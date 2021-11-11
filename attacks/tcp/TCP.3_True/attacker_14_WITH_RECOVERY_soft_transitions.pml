@@ -103,36 +103,6 @@ active proctype attacker() {
 	if
 	:: AtoN ? FIN;
 	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! SYN;
-	fi unless timeout;
-	if
-	:: AtoN ? SYN;
-	fi unless timeout;
-	if
-	:: NtoA ! ACK;
-	fi unless timeout;
-	if
-	:: NtoA ! FIN;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
-	if
-	:: AtoN ? FIN;
-	fi unless timeout;
 // recovery to N
 // N begins here ... 
 

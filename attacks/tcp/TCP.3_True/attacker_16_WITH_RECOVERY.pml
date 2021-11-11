@@ -36,20 +36,6 @@ active proctype attacker() {
 	NtoA ! ACK;
 	AtoN ? FIN;
 	NtoA ! ACK;
-	NtoA ! FIN;
-	AtoN ? ACK;
-	NtoA ! SYN;
-	AtoN ? SYN;
-	NtoA ! ACK;
-	NtoA ! FIN;
-	AtoN ? ACK;
-	AtoN ? ACK;
-	AtoN ? FIN;
-	NtoA ! ACK;
-	NtoB ! ACK;
-	NtoA ! SYN;
-	AtoN ? SYN;
-	AtoN ? ACK;
 // recovery to N
 // N begins here ... 
 

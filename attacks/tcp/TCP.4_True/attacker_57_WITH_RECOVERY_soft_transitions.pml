@@ -10,9 +10,6 @@ active proctype attacker() {
 	if
 	:: BtoN ? SYN;
 	fi unless timeout;
-	if
-	:: AtoN ? ACK;
-	fi unless timeout;
 // recovery to N
 // N begins here ... 
 
