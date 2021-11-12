@@ -228,7 +228,13 @@ def models(model, phi, N, name, removeAfter=False):
 # Parses output of reading trail using Spin.
 def parseTrail(trail_body, cycle_indicator=None):
 
+    print("\n\n-------------- PARSING TRAIL: \n")
+    print(trail_body)
+
+    with_recovery = True
+
     if cycle_indicator == None:
+        with_recovery = False
         cycle_indicator = "CYCLE"
 
     ret, i = [[], []], 0
@@ -260,22 +266,25 @@ def parseTrail(trail_body, cycle_indicator=None):
             if evt != None and msg != None:
 
                 ret[i].append(chan + " " + evt + " " + msg)
+
+            if cycle_indicator in line and (with_recovery == True):
+
+                i = 1
         
-        elif cycle_indicator in line:
-            
-            print("(For debug purposes - we find cycle_indicator={"
-                + cycle_indicator
-                + "} in the line {"
-                + line
-                + "}.  If this looks wrong, Spin might have been updated "
-                + "with a breaking change, in which case the code in parseTrail(...)"
-                + " will need tobe updated.")
+        elif cycle_indicator in line and (with_recovery == False):
             
             i = 1
+
+    print("\n\n----- parsed to: ")
+    print("\n".join([str(r) for r in ret]))
+    print("\n````````````````````````````````````````````````````")
     
     return ret
 
 def parseAllTrails(cmds, with_recovery=False, debug=False, cycle_indicator=None):
+
+    print("\n----> Calling parseAllTrails()")
+
     ret = []
     prov = []
     with open(os.devnull, 'w') as devnull:
