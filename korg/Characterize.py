@@ -252,6 +252,30 @@ def parseTrail(trail_body, cycle_indicator=None):
             
                 msg = LL[line.rfind("Recv ") + 5:].split()[0]
                 evt = "?"
+
+            """
+            Note - it would be tempting to think, "surely, Spin does not use both `Send` and
+            `Sent` in its output, right?"  But, actually, Spin does exactly this, apparently
+            depending on the size of the channel.  Here is an example:
+
+
+             48:    proc  1 (peerB:1) attack-promela-models.DCCP.props.phi1-DCCP-_daisy_check.pml:156 Send DCCP_CLOSEREQ    -> queue 1 (BtoN)
+             48:    proc  1 (peerB:1) attack-promela-models.DCCP.props.phi1-DCCP-_daisy_check.pml:156 (state 37)    [BtoN!DCCP_CLOSEREQ]
+                    queue 1 (BtoN): [DCCP_CLOSEREQ]
+             50:    proc  2 (daisy:1) attack-promela-models.DCCP.props.phi1-DCCP-_daisy_check.pml:217 Recv DCCP_CLOSEREQ    <- queue 1 (BtoN)
+             50:    proc  2 (daisy:1) attack-promela-models.DCCP.props.phi1-DCCP-_daisy_check.pml:217 (state 13)    [BtoN?DCCP_CLOSEREQ]
+                    queue 1 (BtoN): 
+             52:    proc  1 (peerB:1) attack-promela-models.DCCP.props.phi1-DCCP-_daisy_check.pml:132 (state 13)    [before_state[1] = state[1]]
+                    queue 1 (BtoN): 
+             54:    proc  1 (peerB:1) attack-promela-models.DCCP.props.phi1-DCCP-_daisy_check.pml:133 (state 14)    [state[1] = 6]
+                    state[0] = 0
+                    state[1] = 6
+                    queue 1 (BtoN): 
+             56:    proc  2 (daisy:1) attack-promela-models.DCCP.props.phi1-DCCP-_daisy_check.pml:237 Sent DCCP_CLOSEREQ    -> queue 2 (NtoB)
+
+
+            So, in order to support various channel semantics, we need to look for both!
+            """
             
             if "Send" in line and msg == None and evt == None:
             
