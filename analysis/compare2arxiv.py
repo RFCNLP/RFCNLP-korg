@@ -19,6 +19,7 @@ for (vAdir, vBdir) in comparisons:
 			next(fr1)
 			vAtext = fr1.read()
 			with open(vB, "r") as fr2:
+				next(fr2)
 				vBtext = fr2.read()
 				if (vAtext == vBtext):
 					print("SUCCESS: " + vA + " contains the same code as " + vB)

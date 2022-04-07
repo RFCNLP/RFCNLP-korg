@@ -21,7 +21,7 @@ WORKDIR Bin
 RUN gunzip spin651_linux64.gz
 RUN chmod +x spin651_linux64
 RUN cp spin651_linux64 /usr/local/bin/spin
-WORKDIR ..
+WORKDIR ../..
 # Copy KORG
 COPY . KORG
 WORKDIR KORG

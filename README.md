@@ -70,7 +70,15 @@ Available [here](https://arxiv.org/abs/2004.01220).  You can reproduce the resul
 
 ````
 sudo docker build -t korg .
+sudo docker run -it korg bash
+python3 analysis/compare2arxiv.py
 ````
+
+The expected output from the final command is:
+
+```
+TODO
+```
 
 ## How to use the tool.
 
