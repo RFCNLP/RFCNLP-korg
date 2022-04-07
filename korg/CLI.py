@@ -99,6 +99,16 @@ def getArgs():
 		help='The path to the directory that contains your models, directory '\
 		    + 'MUST contain P.pml, Q.pml, Phi.pml, IO.txt.',
 		required=False)
+	optional.add_argument(
+		'--partial_order_reduction',
+		metavar='partial_order_reduction',
+		type=str2bool,
+		default=False,
+		nargs='?',
+		const=True,
+		help='True iff you want the tool to use partial order reduction.  MUST be '\
+		    + 'False if you use any size-0 chanels!',
+		required=False)
 
 	if len(sys.argv[1:])==0:
 	    parser.print_help()

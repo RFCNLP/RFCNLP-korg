@@ -66,7 +66,11 @@ For more, view the article in [Semantic Scholar](https://api.semanticscholar.org
 
 ## ArXiV version with proofs.
 
-Available [here](https://arxiv.org/abs/2004.01220).
+Available [here](https://arxiv.org/abs/2004.01220).  You can reproduce the results by building the [Dockerfile](Dockerfile), which will compile and run the code, and compare the results to a [saved copy of those from the ArXiV document](example.attacks/redo.korg.results.with.partial.order.reduction/).
+
+````
+sudo docker build -t korg .
+````
 
 ## How to use the tool.
 

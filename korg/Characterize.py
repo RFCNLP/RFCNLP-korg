@@ -174,12 +174,15 @@ def check(modelFile, maxDepth=60000):
 
     return not ("violated" in ret or "acceptance cycle" in ret)
 
-def makeAllTrails(modelFile, numTrails=100):
+def makeAllTrails(modelFile, numTrails=100, partialOrderReduction=False):
     args = ""
+    commandPrefix = "spin -run -a "
+    if (partialOrderReduction == False):
+        commandPrefix += "-DNOREDUCE "
     if numTrails <= 1:
-        args = "spin -run -a -DNOREDUCE " + modelFile
+        args = commandPrefix + modelFile
     else:
-        args = "spin -run -a -DNOREDUCE -e -c" + str(numTrails - 1) + " " + modelFile
+        args = commandPrefix + "-e -c" + str(numTrails - 1) + " " + modelFile
     subprocess.run(args.split(" "))
     
 '''

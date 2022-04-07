@@ -20,10 +20,11 @@ from glob              import glob
 
 def main():
     args = getArgs()
-    model, phi, Q, IO, max_attacks, with_recovery, name, characterize \
-        = parseArgs(args)
-    return body(model, phi, Q, IO, max_attacks, \
-                with_recovery, name, characterize)
+    model, phi, Q, IO, max_attacks, \
+        with_recovery, name, characterize, \
+        partial_order_reduction = parseArgs(args)
+    return body(model, phi, Q, IO, max_attacks, with_recovery, name, \
+                characterize, partial_order_reduction)
 
 def parseArgs(args):
     P, Q, IO, phi = (None,)*4
@@ -48,7 +49,8 @@ def parseArgs(args):
         args.max_attacks,   \
         args.with_recovery, \
         args.name,          \
-        args.characterize
+        args.characterize,  \
+        args.partial_order_reduction
 
 def checkArgs(max_attacks, phi, model, Q, basic_check_name, IO):
     if max_attacks == None or max_attacks < 1:
@@ -78,11 +80,13 @@ def checkArgs(max_attacks, phi, model, Q, basic_check_name, IO):
 
 def body(model, phi, Q, IO, max_attacks=1, \
          with_recovery=True, name=None, characterize=False,
-         comparisons=[], doTestRemaining=False):
+         comparisons=[], doTestRemaining=False,
+         partialOrderReduction=False):
     '''
     Body attempts to find attackers against a given model. The attacker 
     is successful if the given phi is violated. The phi is initially 
     evaluated by being composed with Q. 
+
     @param model        : a promela model 
     @param phi          : LTL property satisfied by model || Q
     @param Q            : a promela model
@@ -92,6 +96,8 @@ def body(model, phi, Q, IO, max_attacks=1, \
     @param name         : name of the files
     @param characterize : do you want us to characterize attackers after 
                           producing them?
+
+    Other options are specialized for reproducing paper results.
     '''
     
     # The name of the file we use to check that model || Q |= phi
@@ -135,7 +141,7 @@ def body(model, phi, Q, IO, max_attacks=1, \
         cleanUp()
         return 6
     
-    makeAllTrails(daisy_models_name, max_attacks) 
+    makeAllTrails(daisy_models_name, max_attacks, partialOrderReduction) 
     # second arg is max# attacks to make
 
     cycle_indicator = None if with_recovery == False else ( "[" + label + " = 1]" )
