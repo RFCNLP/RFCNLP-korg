@@ -12,7 +12,8 @@ RUN DEBIAN_FRONTEND="noninteractive"     \
                        bison             \
                        flex              \
                        graphviz          \
-                       time
+                       time              \
+                       tree
 RUN pip3 install green
 # Install Spin
 RUN git clone https://github.com/nimble-code/Spin.git
@@ -25,11 +26,14 @@ WORKDIR ../..
 # Copy KORG
 COPY . KORG
 WORKDIR KORG
+ENV REPRDIR=example.attacks/redo.korg.results.with.partial.order.reduction
+RUN mv $REPRDIR/alternativeCharacterize.py korg/Characterize.py
 RUN pip3 install .
 # Test KORG installation
 RUN make test
 # Reproduce results from KORG ArXiV paper
+RUN make clean
 RUN make experimentKorg
-# Check that they match what was expected
-# RUN python3 analysis/compare2arxiv.py
+RUN tree out
+RUN python3 analysis/compare2arxiv.py
 entrypoint [""]

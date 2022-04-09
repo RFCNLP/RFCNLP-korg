@@ -158,7 +158,9 @@ avgExperiment:
 
 # Attempts to reproduce the original result from KORG, using the exact files from the
 # unmodified repository, and with the same configuration of Spin (namely, partial order
-# reduction is turned on.)
+# reduction is turned on -- to do this, need to re-compile with alternativeCharacterize
+# instead of Characterize - please refer to the Dockerfile to see how this is done.
+# The supported way to reproduce our results is with the Dockerfile!
 experimentKorg:
 	mkdir -p logs;                                                               \
 	for exp in 3 2 1; do                                                         \
@@ -176,8 +178,7 @@ experimentKorg:
 				--max_attacks=10                                                 \
 				--with_recovery=$$b                                              \
 				--name=$$name                                                    \
-				--characterize=False                                             \
-				--partial_order_reduction=True;                                  \
+				--characterize=False;                                            \
 		done;                                                                    \
 	done;
 

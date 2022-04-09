@@ -12,24 +12,16 @@ comparisons = [
 ]
 
 for (vAdir, vBdir) in comparisons:
+	Aset = set()
+	Bset = set()
 	for vA in glob.glob(vAdir + "/*.pml"):
-		vAname = vA.split("/")[-1]
-		vB = vBdir + "/" + vAname
-		with open(vA, "r") as fr1:
-			next(fr1)
-			vAtext = fr1.read()
-			with open(vB, "r") as fr2:
-				next(fr2)
-				vBtext = fr2.read()
-				if (vAtext == vBtext):
-					print("SUCCESS: " + vA + " contains the same code as " + vB)
-				else:
-					print("ERROR: " + vA + " does not contain the same code as " + vB)
-					print("---------------------------------------------------------")
-					print(vA)
-					print(".........................................................")
-					print(vAtext)
-					print("---------------------------------------------------------")
-					print(vB)
-					print(".........................................................")
-					print(vBtext)
+		with open(vA, "r") as fr:
+			_ = next(fr)
+			Aset.add(fr.read())
+	for vB in glob.glob(vBdir + "/*.pml"):
+		with open(vB, "r") as fr:
+			_ = next(fr)
+			Bset.add(fr.read())
+	assert(Aset == Bset)
+
+		

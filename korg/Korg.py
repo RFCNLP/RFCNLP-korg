@@ -21,10 +21,8 @@ from glob              import glob
 def main():
     args = getArgs()
     model, phi, Q, IO, max_attacks, \
-        with_recovery, name, characterize, \
-        partial_order_reduction = parseArgs(args)
-    return body(model, phi, Q, IO, max_attacks, with_recovery, name, \
-                characterize, partial_order_reduction)
+        with_recovery, name, characterize = parseArgs(args)
+    return body(model, phi, Q, IO, max_attacks, with_recovery, name, characterize)
 
 def parseArgs(args):
     P, Q, IO, phi = (None,)*4
@@ -49,8 +47,7 @@ def parseArgs(args):
         args.max_attacks,   \
         args.with_recovery, \
         args.name,          \
-        args.characterize,  \
-        args.partial_order_reduction
+        args.characterize
 
 def checkArgs(max_attacks, phi, model, Q, basic_check_name, IO):
     if max_attacks == None or max_attacks < 1:
@@ -80,8 +77,7 @@ def checkArgs(max_attacks, phi, model, Q, basic_check_name, IO):
 
 def body(model, phi, Q, IO, max_attacks=1, \
          with_recovery=True, name=None, characterize=False,
-         comparisons=[], doTestRemaining=False,
-         partialOrderReduction=False):
+         comparisons=[], doTestRemaining=False):
     '''
     Body attempts to find attackers against a given model. The attacker 
     is successful if the given phi is violated. The phi is initially 
@@ -141,7 +137,7 @@ def body(model, phi, Q, IO, max_attacks=1, \
         cleanUp()
         return 6
     
-    makeAllTrails(daisy_models_name, max_attacks, partialOrderReduction) 
+    makeAllTrails(daisy_models_name, max_attacks) 
     # second arg is max# attacks to make
 
     cycle_indicator = None if with_recovery == False else ( "[" + label + " = 1]" )
