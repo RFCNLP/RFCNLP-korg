@@ -20,10 +20,9 @@ from glob              import glob
 
 def main():
     args = getArgs()
-    model, phi, Q, IO, max_attacks, with_recovery, name, characterize \
-        = parseArgs(args)
-    return body(model, phi, Q, IO, max_attacks, \
-                with_recovery, name, characterize)
+    model, phi, Q, IO, max_attacks, \
+        with_recovery, name, characterize = parseArgs(args)
+    return body(model, phi, Q, IO, max_attacks, with_recovery, name, characterize)
 
 def parseArgs(args):
     P, Q, IO, phi = (None,)*4
@@ -83,6 +82,7 @@ def body(model, phi, Q, IO, max_attacks=1, \
     Body attempts to find attackers against a given model. The attacker 
     is successful if the given phi is violated. The phi is initially 
     evaluated by being composed with Q. 
+
     @param model        : a promela model 
     @param phi          : LTL property satisfied by model || Q
     @param Q            : a promela model
@@ -92,6 +92,8 @@ def body(model, phi, Q, IO, max_attacks=1, \
     @param name         : name of the files
     @param characterize : do you want us to characterize attackers after 
                           producing them?
+
+    Other options are specialized for reproducing paper results.
     '''
     
     # The name of the file we use to check that model || Q |= phi

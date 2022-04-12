@@ -66,7 +66,23 @@ For more, view the article in [Semantic Scholar](https://api.semanticscholar.org
 
 ## ArXiV version with proofs.
 
-Available [here](https://arxiv.org/abs/2004.01220).
+Available [here](https://arxiv.org/abs/2004.01220).  You can reproduce the results by building the [Dockerfile](Dockerfile), which will compile and run the code, and compare the results to a [saved copy of those from the ArXiV document](example.attacks/redo.korg.results.with.partial.order.reduction/).
+
+## How to reproduce the ArXiV results.  
+
+You can reproduce the results reported in the ArXiV version using our [Dockerfile](Dockerfile).  The Dockerfile compiles a [special version of the code](example.attacks/redo.korg.results.with.partial.order.reduction/alternativeCharacterize.py) with [partial order reduction](https://spinroot.com/spin/Workshops/ws06/040.pdf) turned on.  This is an optimization in Spin which we used in the paper, but which we turn off in the default version of KORG in order to support models with rendezvous composition (i.e. size-0 [channels](https://spinroot.com/spin/Man/chan.html)).
+
+````
+sudo docker build -t korg .
+sudo docker run -it korg bash
+python3 analysis/compare2arxiv.py
+````
+
+The expected output from the final command is:
+
+```
+TODO
+```
 
 ## How to use the tool.
 

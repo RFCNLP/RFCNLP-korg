@@ -1,9 +1,18 @@
 # ==============================================================================
-# File      : Characterize.py
-# Author    : Max von Hippel and Cole Vick and [redacted]
+# File      : alternativeCharacterize.py (gets renamed by Dockerfile 
+#                                         to Characterize.py)
+# Author    : Max von Hippel and Cole Vick
 # Authored  : 30 November 2019 - 13 March 2020
 # Purpose   : Checks when models do or do not satisfy properties.  Also inter-
 #             prets various outputs of Spin.
+# 
+#             NOTE - this file is included so that the Dockerfile can reproduce
+#             the results from the ArXiV paper, where we used partial order
+#             reduction.  But moving forward, in order to support RFCNLP and
+#             other projects, we are keeping partial order reduction turned OFF
+#             by default.  This is what the -DNOREDUCE option does in the
+#             file korg/Characterize.py.
+#
 # How to run: This code is used by Korg.py, which is what you want to run.
 # ==============================================================================
 

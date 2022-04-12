@@ -157,28 +157,29 @@ avgExperiment:
 	done;
 
 # Attempts to reproduce the original result from KORG, using the exact files from the
-# unmodified repository.  NOTE - 
-avgExperimentKorg:
-	mkdir -p logs;                                                                   \
-	for exp in 3 2 1; do                                                             \
-		for b in False True; do                                                      \
-			for n in 1 2 3 4 5 6 7 8 9 10; do                                        \
-				echo "looking at ... demo/TCP.korg/phi"$$exp".pml";                  \
-				rm *.pml;                                                            \
-				name="experiment"$$exp"_"$$n"_"$$b;                                  \
-				echo "\n\n~~~~~~~~~~~~~ EXPERIMENT :: "$$name" ~~~~~~~~~~~~~~~\n\n"; \
-				touch "logs/"$$name"_log.txt";                                       \
-				/usr/bin/time -o "logs/"$$name"_log.txt" python3 korg/Korg.py        \
-					--model=demo/TCP.korg/TCP.pml                                    \
-					--phi="demo/TCP.korg/phi"$$exp".pml"                             \
-					--Q=demo/TCP.korg/network.pml                                    \
-					--IO=demo/TCP.korg/IO.txt                                        \
-					--max_attacks=10                                                 \
-					--with_recovery=$$b                                              \
-					--name=$$name                                                    \
-					--characterize=False;                                            \
-			done;                                                                    \
-		done;                                                                        \
+# unmodified repository, and with the same configuration of Spin (namely, partial order
+# reduction is turned on -- to do this, need to re-compile with alternativeCharacterize
+# instead of Characterize - please refer to the Dockerfile to see how this is done.
+# The supported way to reproduce our results is with the Dockerfile!
+experimentKorg:
+	mkdir -p logs;                                                               \
+	for exp in 3 2 1; do                                                         \
+		for b in False True; do                                                  \
+			echo "looking at ... demo/TCP.korg/phi"$$exp".pml";                  \
+			rm *.pml;                                                            \
+			name="experiment"$$exp"_"$$b;                                        \
+			echo "\n\n~~~~~~~~~~~~~ EXPERIMENT :: "$$name" ~~~~~~~~~~~~~~~\n\n"; \
+			touch "logs/"$$name"_log.txt";                                       \
+			/usr/bin/time -o "logs/"$$name"_log.txt" python3 korg/Korg.py        \
+				--model=demo/TCP.korg/TCP.pml                                    \
+				--phi="demo/TCP.korg/phi"$$exp".pml"                             \
+				--Q=demo/TCP.korg/network.pml                                    \
+				--IO=demo/TCP.korg/IO.txt                                        \
+				--max_attacks=10                                                 \
+				--with_recovery=$$b                                              \
+				--name=$$name                                                    \
+				--characterize=False;                                            \
+		done;                                                                    \
 	done;
 
 # Runs the primary test class for korg/Korg.py

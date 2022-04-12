@@ -176,10 +176,11 @@ def check(modelFile, maxDepth=60000):
 
 def makeAllTrails(modelFile, numTrails=100):
     args = ""
+    commandPrefix = "spin -run -a -DNOREDUCE "
     if numTrails <= 1:
-        args = "spin -run -a -DNOREDUCE " + modelFile
+        args = commandPrefix + modelFile
     else:
-        args = "spin -run -a -DNOREDUCE -e -c" + str(numTrails - 1) + " " + modelFile
+        args = commandPrefix + "-e -c" + str(numTrails - 1) + " " + modelFile
     subprocess.run(args.split(" "))
     
 '''
