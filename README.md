@@ -1,5 +1,7 @@
 Tool (Korg), Models (TCP, etc.), and Documentation for Attacker Synthesis Project, *with modifications to support RFCNLP paper*.
 
+#### 🚨 Changes introduced in this version of KORG [have been merged](https://github.com/maxvonhippel/AttackerSynthesis/pull/15) into [the official KORG repository](https://github.com/maxvonhippel/AttackerSynthesis).  This stand-alone fork exists only to facilitate reproduction of results reported in the [RFCNLP paper](https://arxiv.org/abs/2202.09470). 
+
 * TOC
 {:toc}
 
@@ -45,9 +47,10 @@ This repository contains the tool `Korg` as well as various Promela models from 
 * `README` - this README.
 
 ## How to run an example
+
 From the top-level to run smallDemo1, run the command `python3 Korg.py --name=smallDemo1 --dir='demo/smallDemo1/*'`. The output of the demo will appear in `out/smallDemo1`. You can change what directory the results appear in by changing the `name` flag.
 
-## How to cite
+## How to cite KORG
 
 In BibTeX:
 
@@ -64,25 +67,9 @@ In BibTeX:
 
 For more, view the article in [Semantic Scholar](https://api.semanticscholar.org/CorpusID:214795205).
 
-## ArXiV version with proofs.
+## ArXiV version of KORG paper with proofs.
 
 Available [here](https://arxiv.org/abs/2004.01220).  You can reproduce the results by building the [Dockerfile](Dockerfile), which will compile and run the code, and compare the results to a [saved copy of those from the ArXiV document](example.attacks/redo.korg.results.with.partial.order.reduction/).
-
-## How to reproduce the ArXiV results.  
-
-You can reproduce the results reported in the ArXiV version using our [Dockerfile](Dockerfile).  The Dockerfile compiles a [special version of the code](example.attacks/redo.korg.results.with.partial.order.reduction/alternativeCharacterize.py) with [partial order reduction](https://spinroot.com/spin/Workshops/ws06/040.pdf) turned on.  This is an optimization in Spin which we used in the paper, but which we turn off in the default version of KORG in order to support models with rendezvous composition (i.e. size-0 [channels](https://spinroot.com/spin/Man/chan.html)).
-
-````
-sudo docker build -t korg .
-sudo docker run -it korg bash
-python3 analysis/compare2arxiv.py
-````
-
-The expected output from the final command is:
-
-```
-TODO
-```
 
 ## How to use the tool.
 
